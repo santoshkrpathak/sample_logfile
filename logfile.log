@@ -1,0 +1,321 @@
+WARNING:rasa_core.agent:Passing a file name to `agent.train(...)` is deprecated. Rather load the data with `data = agent.load_data(file_name)` and pass it to `agent.train(data)`.
+DEBUG:rasa_core.training.generator:Generated trackers will be deduplicated based on their unique last 5 states.
+DEBUG:rasa_core.training.generator:Number of augmentation rounds is 3
+DEBUG:rasa_core.training.generator:Starting data generation round 0 ... (with 1 trackers)
+DEBUG:rasa_core.training.generator:Finished phase (35 training samples found).
+DEBUG:rasa_core.training.generator:Data generation rounds finished.
+DEBUG:rasa_core.training.generator:Found 0 unused checkpoints
+DEBUG:rasa_core.training.generator:Starting augmentation round 0 ... (with 20 trackers)
+DEBUG:rasa_core.training.generator:Finished phase (735 training samples found).
+DEBUG:rasa_core.training.generator:Starting augmentation round 1 ... (with 20 trackers)
+DEBUG:rasa_core.training.generator:Finished phase (1333 training samples found).
+DEBUG:rasa_core.training.generator:Starting augmentation round 2 ... (with 20 trackers)
+DEBUG:rasa_core.training.generator:Finished phase (1930 training samples found).
+DEBUG:rasa_core.training.generator:Found 1930 training trackers.
+DEBUG:rasa_core.agent:Agent trainer got kwargs: {'epochs': 100, 'batch_size': 50, 'validation_split': 0.2, 'augmentation_factor': 50}
+INFO:rasa_core.featurizers:Creating states and action examples from collected trackers (by MaxHistoryTrackerFeaturizer)...
+INFO:rasa_core.featurizers:Created 3669 action examples.
+INFO:rasa_core.policies.memoization:Memorized 3669 unique action examples.
+INFO:rasa_core.featurizers:Creating states and action examples from collected trackers (by MaxHistoryTrackerFeaturizer)...
+INFO:rasa_core.featurizers:Created 3669 action examples.
+DEBUG:rasa_core.policies.keras_policy:None
+INFO:rasa_core.policies.keras_policy:Fitting model with 3669 total samples and a validation split of 0.2
+DEBUG:rasa_core.policies.policy:Parameters ignored by `model.fit(...)`: {'augmentation_factor': 50}
+INFO:rasa_core.policies.keras_policy:Done fitting keras policy model
+INFO:rasa_core.agent:Model directory ./models/dialogue exists and contains old model files. All files will be overwritten.
+INFO:rasa_core.agent:Persisted model to 'F:\Chatboat\Rasa_basic_folder\models\dialogue'
+INFO:rasa_nlu.components:Added 'nlp_spacy' to component cache. Key 'nlp_spacy-en'.
+DEBUG:rasa_core.tracker_store:Creating a new tracker for id 'default'.
+DEBUG:rasa_core.processor:Received user message 'Hi' with intent '{'name': 'greet', 'confidence': 0.9857698177296588}' and entities '[]'
+DEBUG:rasa_core.processor:Logged UserUtterance - tracker now has 2 events
+DEBUG:rasa_core.processor:Current slot values: 
+	cuisine: None
+	email: None
+	location: None
+	location_found: None
+	price: None
+DEBUG:rasa_core.policies.memoization:Current tracker state [None, None, None, {}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}]
+DEBUG:rasa_core.policies.memoization:There is a memorised next action '3'
+DEBUG:rasa_core.policies.ensemble:Predicted next action using policy_0_MemoizationPolicy
+DEBUG:rasa_core.policies.ensemble:Predicted next action 'utter_greet' with prob 1.00.
+DEBUG:rasa_core.processor:Action 'utter_greet' ended with events '[]'
+DEBUG:rasa_core.processor:Bot utterance 'BotUttered(text: hey there! How may i help you, data: null)'
+DEBUG:rasa_core.policies.memoization:Current tracker state [None, None, {}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'intent_greet': 1.0, 'prev_utter_greet': 1.0}]
+DEBUG:rasa_core.policies.memoization:There is a memorised next action '0'
+DEBUG:rasa_core.policies.ensemble:Predicted next action using policy_0_MemoizationPolicy
+DEBUG:rasa_core.policies.ensemble:Predicted next action 'action_listen' with prob 1.00.
+DEBUG:rasa_core.processor:Action 'action_listen' ended with events '[]'
+DEBUG:rasa_core.tracker_store:Recreating tracker for id 'default'
+DEBUG:rasa_core.processor:Received user message 'find a restaurants please' with intent '{'name': 'restaurant_search', 'confidence': 0.9886362375289507}' and entities '[]'
+DEBUG:rasa_core.processor:Logged UserUtterance - tracker now has 6 events
+DEBUG:rasa_core.processor:Current slot values: 
+	cuisine: None
+	email: None
+	location: None
+	location_found: None
+	price: None
+DEBUG:rasa_core.policies.memoization:Current tracker state [None, {}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'intent_greet': 1.0, 'prev_utter_greet': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0}]
+DEBUG:rasa_core.policies.memoization:There is a memorised next action '7'
+DEBUG:rasa_core.policies.ensemble:Predicted next action using policy_0_MemoizationPolicy
+DEBUG:rasa_core.policies.ensemble:Predicted next action 'utter_ask_location' with prob 1.00.
+DEBUG:rasa_core.processor:Action 'utter_ask_location' ended with events '[]'
+DEBUG:rasa_core.processor:Bot utterance 'BotUttered(text: In what location?, data: null)'
+DEBUG:rasa_core.policies.memoization:Current tracker state [{}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'intent_greet': 1.0, 'prev_utter_greet': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0}, {'intent_restaurant_search': 1.0, 'prev_utter_ask_location': 1.0}]
+DEBUG:rasa_core.policies.memoization:There is a memorised next action '0'
+DEBUG:rasa_core.policies.ensemble:Predicted next action using policy_0_MemoizationPolicy
+DEBUG:rasa_core.policies.ensemble:Predicted next action 'action_listen' with prob 1.00.
+DEBUG:rasa_core.processor:Action 'action_listen' ended with events '[]'
+DEBUG:rasa_core.tracker_store:Recreating tracker for id 'default'
+DEBUG:rasa_core.processor:Received user message 'pune' with intent '{'name': 'restaurant_search', 'confidence': 0.9999999623758694}' and entities '[{'start': 0, 'end': 4, 'value': 'pune', 'entity': 'location', 'confidence': 0.9844340197930169, 'extractor': 'ner_crf'}]'
+DEBUG:rasa_core.processor:Logged UserUtterance - tracker now has 11 events
+DEBUG:rasa_core.processor:Current slot values: 
+	cuisine: None
+	email: None
+	location: pune
+	location_found: None
+	price: None
+DEBUG:rasa_core.policies.memoization:Current tracker state [{'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'intent_greet': 1.0, 'prev_utter_greet': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0}, {'intent_restaurant_search': 1.0, 'prev_utter_ask_location': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0, 'entity_location': 1.0, 'slot_location_0': 1.0}]
+DEBUG:rasa_core.policies.memoization:There is a memorised next action '13'
+DEBUG:rasa_core.policies.ensemble:Predicted next action using policy_0_MemoizationPolicy
+DEBUG:rasa_core.policies.ensemble:Predicted next action 'action_check_location' with prob 1.00.
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): developers.zomato.com
+DEBUG:urllib3.connectionpool:https://developers.zomato.com:443 "GET /api/v2.1/locations?query=pune&count=1 HTTP/1.1" 200 171
+DEBUG:rasa_core.processor:Action 'action_check_location' ended with events '['SlotSet(key: location, value: pune)', 'SlotSet(key: location_found, value: found)']'
+DEBUG:rasa_core.policies.memoization:Current tracker state [{'intent_greet': 1.0, 'prev_utter_greet': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0}, {'intent_restaurant_search': 1.0, 'prev_utter_ask_location': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0, 'entity_location': 1.0, 'slot_location_0': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_check_location': 1.0, 'entity_location': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}]
+DEBUG:rasa_core.policies.memoization:There is a memorised next action '8'
+DEBUG:rasa_core.policies.ensemble:Predicted next action using policy_0_MemoizationPolicy
+DEBUG:rasa_core.policies.ensemble:Predicted next action 'utter_ask_cuisine' with prob 1.00.
+DEBUG:rasa_core.processor:Action 'utter_ask_cuisine' ended with events '[]'
+DEBUG:rasa_core.processor:Bot utterance 'BotUttered(text: what kind of cuisine would you like?
+ 1. Chinese 
+ 2. Italian 
+ 3. South Indian 
+ 4. North Indian 
+ 5. Mexican 
+ 6. American, data: null)'
+DEBUG:rasa_core.policies.memoization:Current tracker state [{'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0}, {'intent_restaurant_search': 1.0, 'prev_utter_ask_location': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0, 'entity_location': 1.0, 'slot_location_0': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_check_location': 1.0, 'entity_location': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'entity_location': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0, 'prev_utter_ask_cuisine': 1.0}]
+DEBUG:rasa_core.policies.memoization:There is a memorised next action '0'
+DEBUG:rasa_core.policies.ensemble:Predicted next action using policy_0_MemoizationPolicy
+DEBUG:rasa_core.policies.ensemble:Predicted next action 'action_listen' with prob 1.00.
+DEBUG:rasa_core.processor:Action 'action_listen' ended with events '[]'
+DEBUG:rasa_core.tracker_store:Recreating tracker for id 'default'
+DEBUG:rasa_core.processor:Received user message 'chinese' with intent '{'name': 'restaurant_search', 'confidence': 0.999999945490872}' and entities '[{'start': 0, 'end': 7, 'value': 'chinese', 'entity': 'cuisine', 'confidence': 0.5532438485265072, 'extractor': 'ner_crf', 'processors': ['ner_synonyms']}]'
+DEBUG:rasa_core.processor:Logged UserUtterance - tracker now has 19 events
+DEBUG:rasa_core.processor:Current slot values: 
+	cuisine: chinese
+	email: None
+	location: pune
+	location_found: found
+	price: None
+DEBUG:rasa_core.policies.memoization:Current tracker state [{'intent_restaurant_search': 1.0, 'prev_utter_ask_location': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0, 'entity_location': 1.0, 'slot_location_0': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_check_location': 1.0, 'entity_location': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'entity_location': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0, 'prev_utter_ask_cuisine': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0, 'entity_cuisine': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}]
+DEBUG:rasa_core.policies.memoization:There is a memorised next action '10'
+DEBUG:rasa_core.policies.ensemble:Predicted next action using policy_0_MemoizationPolicy
+DEBUG:rasa_core.policies.ensemble:Predicted next action 'utter_ask_price' with prob 1.00.
+DEBUG:rasa_core.processor:Action 'utter_ask_price' ended with events '[]'
+DEBUG:rasa_core.processor:Bot utterance 'BotUttered(text: What's the average budget for two people 
+1. Lesser than 300 
+2. between 300 and 700
+3. More than 700, data: null)'
+DEBUG:rasa_core.policies.memoization:Current tracker state [{'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0, 'entity_location': 1.0, 'slot_location_0': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_check_location': 1.0, 'entity_location': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'entity_location': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0, 'prev_utter_ask_cuisine': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0, 'entity_cuisine': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'prev_utter_ask_price': 1.0, 'entity_cuisine': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}]
+DEBUG:rasa_core.policies.memoization:There is a memorised next action '0'
+DEBUG:rasa_core.policies.ensemble:Predicted next action using policy_0_MemoizationPolicy
+DEBUG:rasa_core.policies.ensemble:Predicted next action 'action_listen' with prob 1.00.
+DEBUG:rasa_core.processor:Action 'action_listen' ended with events '[]'
+DEBUG:rasa_core.tracker_store:Recreating tracker for id 'default'
+DEBUG:rasa_core.processor:Received user message 'more than 700' with intent '{'name': 'restaurant_search', 'confidence': 0.9878793204509685}' and entities '[{'start': 0, 'end': 13, 'value': 'more than 700', 'entity': 'price', 'confidence': 0.8498583595622216, 'extractor': 'ner_crf'}]'
+DEBUG:rasa_core.processor:Logged UserUtterance - tracker now has 24 events
+DEBUG:rasa_core.processor:Current slot values: 
+	cuisine: chinese
+	email: None
+	location: pune
+	location_found: found
+	price: more than 700
+DEBUG:rasa_core.policies.memoization:Current tracker state [{'intent_restaurant_search': 1.0, 'prev_action_check_location': 1.0, 'entity_location': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'entity_location': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0, 'prev_utter_ask_cuisine': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0, 'entity_cuisine': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'prev_utter_ask_price': 1.0, 'entity_cuisine': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'entity_price': 1.0, 'slot_price_2': 1.0, 'prev_action_listen': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}]
+DEBUG:rasa_core.policies.memoization:There is a memorised next action '12'
+DEBUG:rasa_core.policies.ensemble:Predicted next action using policy_0_MemoizationPolicy
+DEBUG:rasa_core.policies.ensemble:Predicted next action 'action_restaurant' with prob 1.00.
+INFO:root:loc:punecuisine:chineseprice:more than 700
+INFO:root:started query....
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): developers.zomato.com
+DEBUG:urllib3.connectionpool:https://developers.zomato.com:443 "GET /api/v2.1/locations?query=pune&count=1 HTTP/1.1" 200 171
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): developers.zomato.com
+DEBUG:urllib3.connectionpool:https://developers.zomato.com:443 "GET /api/v2.1/search?q=&count=0&lat=18.520469&lon=73.85662&cuisines=25 HTTP/1.1" 200 72
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): developers.zomato.com
+DEBUG:urllib3.connectionpool:https://developers.zomato.com:443 "GET /api/v2.1/search?q=&count=20&lat=18.520469&lon=73.85662&cuisines=25 HTTP/1.1" 200 55942
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): developers.zomato.com
+DEBUG:urllib3.connectionpool:https://developers.zomato.com:443 "GET /api/v2.1/search?q=&count=40&lat=18.520469&lon=73.85662&cuisines=25 HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): developers.zomato.com
+DEBUG:urllib3.connectionpool:https://developers.zomato.com:443 "GET /api/v2.1/search?q=&count=60&lat=18.520469&lon=73.85662&cuisines=25 HTTP/1.1" 200 55942
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): developers.zomato.com
+DEBUG:urllib3.connectionpool:https://developers.zomato.com:443 "GET /api/v2.1/search?q=&count=80&lat=18.520469&lon=73.85662&cuisines=25 HTTP/1.1" 200 55942
+ERROR:rasa_core.processor:Encountered an exception while running action 'action_restaurant'. Bot will continue, but the actions events are lost. Make sure to fix the exception in your custom code.
+ERROR:rasa_core.processor:must be str, not tuple
+Traceback (most recent call last):
+  File "f:\chatboat\rasa- installation guide\rasa_core-master\rasa_core\processor.py", line 311, in _run_action
+    events = action.run(dispatcher, tracker, self.domain)
+  File "F:\Chatboat\Rasa_basic_folder\actions.py", line 30, in run
+    logging.info('got query result shape:'+restaurants.shape)
+TypeError: must be str, not tuple
+DEBUG:rasa_core.processor:Action 'action_restaurant' ended with events '[]'
+DEBUG:rasa_core.policies.memoization:Current tracker state [{'intent_restaurant_search': 1.0, 'entity_location': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0, 'prev_utter_ask_cuisine': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0, 'entity_cuisine': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'prev_utter_ask_price': 1.0, 'entity_cuisine': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'entity_price': 1.0, 'slot_price_2': 1.0, 'prev_action_listen': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'entity_price': 1.0, 'slot_price_2': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0, 'prev_action_restaurant': 1.0}]
+DEBUG:rasa_core.policies.memoization:There is a memorised next action '0'
+DEBUG:rasa_core.policies.ensemble:Predicted next action using policy_0_MemoizationPolicy
+DEBUG:rasa_core.policies.ensemble:Predicted next action 'action_listen' with prob 1.00.
+DEBUG:rasa_core.processor:Action 'action_listen' ended with events '[]'
+DEBUG:rasa_core.tracker_store:Recreating tracker for id 'default'
+DEBUG:rasa_core.processor:Received user message 'hi' with intent '{'name': 'greet', 'confidence': 0.9857698177296588}' and entities '[]'
+DEBUG:rasa_core.processor:Logged UserUtterance - tracker now has 27 events
+DEBUG:rasa_core.processor:Current slot values: 
+	cuisine: chinese
+	email: None
+	location: pune
+	location_found: found
+	price: more than 700
+DEBUG:rasa_core.policies.memoization:Current tracker state [{'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0, 'entity_cuisine': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'prev_utter_ask_price': 1.0, 'entity_cuisine': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'entity_price': 1.0, 'slot_price_2': 1.0, 'prev_action_listen': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'entity_price': 1.0, 'slot_price_2': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0, 'prev_action_restaurant': 1.0}, {'prev_action_listen': 1.0, 'slot_price_2': 1.0, 'intent_greet': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}]
+DEBUG:rasa_core.policies.memoization:There is no memorised next action
+DEBUG:rasa_core.policies.ensemble:Predicted next action using policy_1_KerasPolicy
+DEBUG:rasa_core.policies.ensemble:Predicted next action 'utter_final_bye' with prob 1.00.
+DEBUG:rasa_core.processor:Action 'utter_final_bye' ended with events '[]'
+DEBUG:rasa_core.processor:Bot utterance 'BotUttered(text: Okay!Bon Appetit!, data: null)'
+DEBUG:rasa_core.policies.memoization:Current tracker state [{'intent_restaurant_search': 1.0, 'prev_utter_ask_price': 1.0, 'entity_cuisine': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'entity_price': 1.0, 'slot_price_2': 1.0, 'prev_action_listen': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'entity_price': 1.0, 'slot_price_2': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0, 'prev_action_restaurant': 1.0}, {'prev_action_listen': 1.0, 'slot_price_2': 1.0, 'intent_greet': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'prev_utter_final_bye': 1.0, 'slot_price_2': 1.0, 'intent_greet': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}]
+DEBUG:rasa_core.policies.memoization:There is no memorised next action
+DEBUG:rasa_core.policies.ensemble:Predicted next action using policy_1_KerasPolicy
+DEBUG:rasa_core.policies.ensemble:Predicted next action 'action_listen' with prob 1.00.
+DEBUG:rasa_core.processor:Action 'action_listen' ended with events '[]'
+DEBUG:rasa_core.tracker_store:Recreating tracker for id 'default'
+DEBUG:rasa_core.processor:Received user message '' with intent '{'name': '', 'confidence': 0.0}' and entities '[]'
+DEBUG:rasa_core.processor:Logged UserUtterance - tracker now has 31 events
+DEBUG:rasa_core.processor:Current slot values: 
+	cuisine: chinese
+	email: None
+	location: pune
+	location_found: found
+	price: more than 700
+DEBUG:rasa_core.policies.memoization:Current tracker state [{'intent_restaurant_search': 1.0, 'entity_price': 1.0, 'slot_price_2': 1.0, 'prev_action_listen': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'entity_price': 1.0, 'slot_price_2': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0, 'prev_action_restaurant': 1.0}, {'prev_action_listen': 1.0, 'slot_price_2': 1.0, 'intent_greet': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'prev_utter_final_bye': 1.0, 'slot_price_2': 1.0, 'intent_greet': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'prev_action_listen': 1.0, 'slot_price_2': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}]
+DEBUG:rasa_core.policies.memoization:There is no memorised next action
+DEBUG:rasa_core.policies.ensemble:Predicted next action using policy_1_KerasPolicy
+DEBUG:rasa_core.policies.ensemble:Predicted next action 'utter_greet' with prob 1.00.
+DEBUG:rasa_core.processor:Action 'utter_greet' ended with events '[]'
+DEBUG:rasa_core.processor:Bot utterance 'BotUttered(text: Hey, How is it going. How May I help you Today, data: null)'
+DEBUG:rasa_core.policies.memoization:Current tracker state [{'intent_restaurant_search': 1.0, 'entity_price': 1.0, 'slot_price_2': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0, 'prev_action_restaurant': 1.0}, {'prev_action_listen': 1.0, 'slot_price_2': 1.0, 'intent_greet': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'prev_utter_final_bye': 1.0, 'slot_price_2': 1.0, 'intent_greet': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'prev_action_listen': 1.0, 'slot_price_2': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'slot_price_2': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0, 'prev_utter_greet': 1.0}]
+DEBUG:rasa_core.policies.memoization:There is no memorised next action
+DEBUG:rasa_core.policies.ensemble:Predicted next action using policy_1_KerasPolicy
+DEBUG:rasa_core.policies.ensemble:Predicted next action 'action_listen' with prob 1.00.
+DEBUG:rasa_core.processor:Action 'action_listen' ended with events '[]'
+DEBUG:rasa_core.tracker_store:Recreating tracker for id 'default'
+DEBUG:rasa_core.processor:Received user message 'looking for restaurents' with intent '{'name': 'restaurant_search', 'confidence': 0.9917290454143756}' and entities '[]'
+DEBUG:rasa_core.processor:Logged UserUtterance - tracker now has 35 events
+DEBUG:rasa_core.processor:Current slot values: 
+	cuisine: chinese
+	email: None
+	location: pune
+	location_found: found
+	price: more than 700
+DEBUG:rasa_core.policies.memoization:Current tracker state [{'prev_action_listen': 1.0, 'slot_price_2': 1.0, 'intent_greet': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'prev_utter_final_bye': 1.0, 'slot_price_2': 1.0, 'intent_greet': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'prev_action_listen': 1.0, 'slot_price_2': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'slot_price_2': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0, 'prev_utter_greet': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0, 'slot_price_2': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}]
+DEBUG:rasa_core.policies.memoization:There is no memorised next action
+DEBUG:rasa_core.policies.ensemble:Predicted next action using policy_1_KerasPolicy
+DEBUG:rasa_core.policies.ensemble:Predicted next action 'utter_ask_location' with prob 0.98.
+DEBUG:rasa_core.processor:Action 'utter_ask_location' ended with events '[]'
+DEBUG:rasa_core.processor:Bot utterance 'BotUttered(text: In what location?, data: null)'
+DEBUG:rasa_core.policies.memoization:Current tracker state [{'prev_utter_final_bye': 1.0, 'slot_price_2': 1.0, 'intent_greet': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'prev_action_listen': 1.0, 'slot_price_2': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'slot_price_2': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0, 'prev_utter_greet': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0, 'slot_price_2': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'slot_price_2': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0, 'prev_utter_ask_location': 1.0}]
+DEBUG:rasa_core.policies.memoization:There is no memorised next action
+DEBUG:rasa_core.policies.ensemble:Predicted next action using policy_1_KerasPolicy
+DEBUG:rasa_core.policies.ensemble:Predicted next action 'action_listen' with prob 1.00.
+DEBUG:rasa_core.processor:Action 'action_listen' ended with events '[]'
+DEBUG:rasa_core.tracker_store:Recreating tracker for id 'default'
+DEBUG:rasa_core.processor:Received user message 'pune' with intent '{'name': 'restaurant_search', 'confidence': 0.9999999623758694}' and entities '[{'start': 0, 'end': 4, 'value': 'pune', 'entity': 'location', 'confidence': 0.9844340197930169, 'extractor': 'ner_crf'}]'
+DEBUG:rasa_core.processor:Logged UserUtterance - tracker now has 40 events
+DEBUG:rasa_core.processor:Current slot values: 
+	cuisine: chinese
+	email: None
+	location: pune
+	location_found: found
+	price: more than 700
+DEBUG:rasa_core.policies.memoization:Current tracker state [{'prev_action_listen': 1.0, 'slot_price_2': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'slot_price_2': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0, 'prev_utter_greet': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0, 'slot_price_2': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'slot_price_2': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0, 'prev_utter_ask_location': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0, 'slot_price_2': 1.0, 'entity_location': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}]
+DEBUG:rasa_core.policies.memoization:There is no memorised next action
+DEBUG:rasa_core.policies.ensemble:Predicted next action using policy_1_KerasPolicy
+DEBUG:rasa_core.policies.ensemble:Predicted next action 'action_check_location' with prob 1.00.
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): developers.zomato.com
+DEBUG:urllib3.connectionpool:https://developers.zomato.com:443 "GET /api/v2.1/locations?query=pune&count=1 HTTP/1.1" 200 171
+DEBUG:rasa_core.processor:Action 'action_check_location' ended with events '['SlotSet(key: location, value: pune)', 'SlotSet(key: location_found, value: found)']'
+DEBUG:rasa_core.policies.memoization:Current tracker state [{'slot_price_2': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0, 'prev_utter_greet': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0, 'slot_price_2': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'slot_price_2': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0, 'prev_utter_ask_location': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0, 'slot_price_2': 1.0, 'entity_location': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_check_location': 1.0, 'slot_price_2': 1.0, 'entity_location': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}]
+DEBUG:rasa_core.policies.memoization:There is no memorised next action
+DEBUG:rasa_core.policies.ensemble:Predicted next action using policy_1_KerasPolicy
+DEBUG:rasa_core.policies.ensemble:Predicted next action 'utter_ask_cuisine' with prob 1.00.
+DEBUG:rasa_core.processor:Action 'utter_ask_cuisine' ended with events '[]'
+DEBUG:rasa_core.processor:Bot utterance 'BotUttered(text: what kind of cuisine would you like?
+ 1. Chinese 
+ 2. Italian 
+ 3. South Indian 
+ 4. North Indian 
+ 5. Mexican 
+ 6. American, data: null)'
+DEBUG:rasa_core.policies.memoization:Current tracker state [{'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0, 'slot_price_2': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'slot_price_2': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0, 'prev_utter_ask_location': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0, 'slot_price_2': 1.0, 'entity_location': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_check_location': 1.0, 'slot_price_2': 1.0, 'entity_location': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'slot_price_2': 1.0, 'entity_location': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0, 'prev_utter_ask_cuisine': 1.0}]
+DEBUG:rasa_core.policies.memoization:There is a memorised next action '0'
+DEBUG:rasa_core.policies.ensemble:Predicted next action using policy_0_MemoizationPolicy
+DEBUG:rasa_core.policies.ensemble:Predicted next action 'action_listen' with prob 1.00.
+DEBUG:rasa_core.processor:Action 'action_listen' ended with events '[]'
+DEBUG:rasa_core.tracker_store:Recreating tracker for id 'default'
+DEBUG:rasa_core.processor:Received user message 'chinese' with intent '{'name': 'restaurant_search', 'confidence': 0.999999945490872}' and entities '[{'start': 0, 'end': 7, 'value': 'chinese', 'entity': 'cuisine', 'confidence': 0.5532438485265072, 'extractor': 'ner_crf', 'processors': ['ner_synonyms']}]'
+DEBUG:rasa_core.processor:Logged UserUtterance - tracker now has 48 events
+DEBUG:rasa_core.processor:Current slot values: 
+	cuisine: chinese
+	email: None
+	location: pune
+	location_found: found
+	price: more than 700
+DEBUG:rasa_core.policies.memoization:Current tracker state [{'intent_restaurant_search': 1.0, 'slot_price_2': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0, 'prev_utter_ask_location': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0, 'slot_price_2': 1.0, 'entity_location': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_check_location': 1.0, 'slot_price_2': 1.0, 'entity_location': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'slot_price_2': 1.0, 'entity_location': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0, 'prev_utter_ask_cuisine': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0, 'slot_price_2': 1.0, 'entity_cuisine': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}]
+DEBUG:rasa_core.policies.memoization:There is a memorised next action '10'
+DEBUG:rasa_core.policies.ensemble:Predicted next action using policy_0_MemoizationPolicy
+DEBUG:rasa_core.policies.ensemble:Predicted next action 'utter_ask_price' with prob 1.00.
+DEBUG:rasa_core.processor:Action 'utter_ask_price' ended with events '[]'
+DEBUG:rasa_core.processor:Bot utterance 'BotUttered(text: What's the average budget for two people 
+1. Lesser than 300 
+2. between 300 and 700
+3. More than 700, data: null)'
+DEBUG:rasa_core.policies.memoization:Current tracker state [{'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0, 'slot_price_2': 1.0, 'entity_location': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_check_location': 1.0, 'slot_price_2': 1.0, 'entity_location': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'slot_price_2': 1.0, 'entity_location': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0, 'prev_utter_ask_cuisine': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0, 'slot_price_2': 1.0, 'entity_cuisine': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'prev_utter_ask_price': 1.0, 'slot_price_2': 1.0, 'entity_cuisine': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}]
+DEBUG:rasa_core.policies.memoization:There is a memorised next action '0'
+DEBUG:rasa_core.policies.ensemble:Predicted next action using policy_0_MemoizationPolicy
+DEBUG:rasa_core.policies.ensemble:Predicted next action 'action_listen' with prob 1.00.
+DEBUG:rasa_core.processor:Action 'action_listen' ended with events '[]'
+DEBUG:rasa_core.tracker_store:Recreating tracker for id 'default'
+DEBUG:rasa_core.processor:Received user message '>700' with intent '{'name': 'restaurant_search', 'confidence': 0.9967788871349735}' and entities '[{'start': 0, 'end': 4, 'value': 'more than 700', 'entity': 'price', 'confidence': 0.861784075170221, 'extractor': 'ner_crf', 'processors': ['ner_synonyms']}]'
+DEBUG:rasa_core.processor:Logged UserUtterance - tracker now has 53 events
+DEBUG:rasa_core.processor:Current slot values: 
+	cuisine: chinese
+	email: None
+	location: pune
+	location_found: found
+	price: more than 700
+DEBUG:rasa_core.policies.memoization:Current tracker state [{'intent_restaurant_search': 1.0, 'prev_action_check_location': 1.0, 'slot_price_2': 1.0, 'entity_location': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'slot_price_2': 1.0, 'entity_location': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0, 'prev_utter_ask_cuisine': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0, 'slot_price_2': 1.0, 'entity_cuisine': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'prev_utter_ask_price': 1.0, 'slot_price_2': 1.0, 'entity_cuisine': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0, 'entity_price': 1.0, 'slot_price_2': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}]
+DEBUG:rasa_core.policies.memoization:There is a memorised next action '12'
+DEBUG:rasa_core.policies.ensemble:Predicted next action using policy_0_MemoizationPolicy
+DEBUG:rasa_core.policies.ensemble:Predicted next action 'action_restaurant' with prob 1.00.
+INFO:root:loc:punecuisine:chineseprice:more than 700
+INFO:root:started query....
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): developers.zomato.com
+DEBUG:urllib3.connectionpool:https://developers.zomato.com:443 "GET /api/v2.1/locations?query=pune&count=1 HTTP/1.1" 200 171
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): developers.zomato.com
+DEBUG:urllib3.connectionpool:https://developers.zomato.com:443 "GET /api/v2.1/search?q=&count=0&lat=18.520469&lon=73.85662&cuisines=25 HTTP/1.1" 200 72
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): developers.zomato.com
+DEBUG:urllib3.connectionpool:https://developers.zomato.com:443 "GET /api/v2.1/search?q=&count=20&lat=18.520469&lon=73.85662&cuisines=25 HTTP/1.1" 200 55946
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): developers.zomato.com
+DEBUG:urllib3.connectionpool:https://developers.zomato.com:443 "GET /api/v2.1/search?q=&count=40&lat=18.520469&lon=73.85662&cuisines=25 HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): developers.zomato.com
+DEBUG:urllib3.connectionpool:https://developers.zomato.com:443 "GET /api/v2.1/search?q=&count=60&lat=18.520469&lon=73.85662&cuisines=25 HTTP/1.1" 200 55946
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): developers.zomato.com
+DEBUG:urllib3.connectionpool:https://developers.zomato.com:443 "GET /api/v2.1/search?q=&count=80&lat=18.520469&lon=73.85662&cuisines=25 HTTP/1.1" 200 None
+ERROR:rasa_core.processor:Encountered an exception while running action 'action_restaurant'. Bot will continue, but the actions events are lost. Make sure to fix the exception in your custom code.
+ERROR:rasa_core.processor:must be str, not tuple
+Traceback (most recent call last):
+  File "f:\chatboat\rasa- installation guide\rasa_core-master\rasa_core\processor.py", line 311, in _run_action
+    events = action.run(dispatcher, tracker, self.domain)
+  File "F:\Chatboat\Rasa_basic_folder\actions.py", line 30, in run
+    logging.info('got query result shape:'+restaurants.shape)
+TypeError: must be str, not tuple
+DEBUG:rasa_core.processor:Action 'action_restaurant' ended with events '[]'
+DEBUG:rasa_core.policies.memoization:Current tracker state [{'intent_restaurant_search': 1.0, 'slot_price_2': 1.0, 'entity_location': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0, 'prev_utter_ask_cuisine': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0, 'slot_price_2': 1.0, 'entity_cuisine': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'prev_utter_ask_price': 1.0, 'slot_price_2': 1.0, 'entity_cuisine': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'prev_action_listen': 1.0, 'entity_price': 1.0, 'slot_price_2': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0}, {'intent_restaurant_search': 1.0, 'entity_price': 1.0, 'slot_price_2': 1.0, 'slot_cuisine_0': 1.0, 'slot_location_0': 1.0, 'slot_location_found_2': 1.0, 'prev_action_restaurant': 1.0}]
+DEBUG:rasa_core.policies.memoization:There is a memorised next action '0'
+DEBUG:rasa_core.policies.ensemble:Predicted next action using policy_0_MemoizationPolicy
+DEBUG:rasa_core.policies.ensemble:Predicted next action 'action_listen' with prob 1.00.
+DEBUG:rasa_core.processor:Action 'action_listen' ended with events '[]'
